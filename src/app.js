@@ -5,7 +5,8 @@ const router = require('./routes');
 const errorHandler = require('./utils/errorHandler');
 require('dotenv').config();
 
-// Esta es nuestra aplicación
+
+//This is our app
 const app = express();
 
 // Middlewares 
@@ -17,10 +18,13 @@ app.use(cors());
 
 app.use('/api/v1', router);
 app.get('/', (req, res) => {
-    return res.send("Welcome to express!");
+    return res.send(" <a title='Go to api' href='http://localhost:8080/api/v1/users'>Welcome to the apis 'CRUD'</a> ");
+});
+app.get('*', (req, res) => {
+    return res.redirect('/'); // redirect to main url
 });
 
-// middlewares después de las rutas
+// middlewares after routes
 app.use(errorHandler)
 
 module.exports = app;
