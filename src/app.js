@@ -18,7 +18,7 @@ app.use(cors());
 
 app.use('/api/v1', router);
 app.get('/', (req, res) => {
-    return res.send(" <a title='Go to api' href='http://localhost:8080/api/v1/users'>Welcome to the apis 'CRUD'</a> ");
+    return res.send(" <a title='Go to api' href='https://api-user-hew8.onrender.com/api/v1/users'>Welcome to the apis 'CRUD'</a> ");
 });
 app.get('*', (req, res) => {
     return res.redirect('/'); // redirect to main url
